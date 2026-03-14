@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de projetos da Construtora Bezerra Mendes LTDA – construção civil, telecomunicações, infraestrutura elétrica e projetos urbanos no Ceará." />
+  <meta name="keywords" content="projetos de engenharia Ceará, construtora, obras, telecomunicações, infraestrutura elétrica, iluminação pública" />
+  <title>Projetos – Construtora Bezerra Mendes LTDA</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+      justify-content: center;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: 100px;
+      border: 2px solid var(--gray-200);
+      background: none;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--steel);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--white-pure);
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .project-card.show { opacity: 1; transform: scale(1); }
+    .project-card:not(.show) { opacity: 0; transform: scale(0.95); }
+    .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .pc-img {
+      position: relative;
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .pc-img::after { content:''; position:absolute; inset:0; background: linear-gradient(to top, rgba(10,22,40,0.65), transparent 55%); }
+    .pc-img .badge { position: absolute; top: 14px; left: 14px; z-index: 2; }
+    .pc-body { padding: 24px; }
+    .pc-body h4 { font-size: 1rem; color: var(--text-dark); margin-bottom: 8px; }
+    .pc-body p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+    .pc-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--text-light); flex-wrap: wrap; }
+    .pc-meta span { display: flex; align-items: center; gap: 5px; }
+    .pc-meta i { color: var(--gold); }
+
+    @media(max-width:900px){ .projects-grid{ grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:560px){ .projects-grid{ grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div id="preloader"><img src="assets/images/logo.png" alt="Bezerra Mendes" class="preloader-logo" /><div class="preloader-bar"><div class="preloader-bar-inner"></div></div></div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Construtora Bezerra Mendes LTDA" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html" class="active">Projetos</a></li>
+        <li><a href="orcamento.html">Orçamento</a></li><li><a href="contato.html">Contato</a></li>
+      </ul>
+      <a href="orcamento.html" class="btn btn-primary nav-cta"><i class="fas fa-clipboard-list"></i> Solicitar Orçamento</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a>
+    <a href="projetos.html">Projetos</a><a href="orcamento.html">Orçamento</a><a href="contato.html">Contato</a>
+    <a href="orcamento.html" class="btn btn-primary">Solicitar Orçamento</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Início</a><i class="fas fa-chevron-right"></i><span>Projetos</span></nav>
+      <h1 class="reveal">Nosso Portfólio</h1>
+      <p style="color:rgba(248,250,252,0.7);max-width:580px;" class="reveal delay-1">Conheça os projetos que executamos com qualidade, segurança e compromisso com a excelência técnica.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">Todos os Projetos</button>
+        <button class="filter-btn" data-filter="civil">Construção Civil</button>
+        <button class="filter-btn" data-filter="telecom">Telecomunicações</button>
+        <button class="filter-btn" data-filter="eletrica">Infraestrutura Elétrica</button>
+        <button class="filter-btn" data-filter="urbano">Projetos Urbanos</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card" data-category="civil">
+          <div class="pc-img" style="background-image:url('assets/images/building_construction.jpg')">
+            <span class="badge">Construção Civil</span>
+          </div>
+          <div class="pc-body">
+            <h4>Complexo Comercial Porto Pecém</h4>
+            <p>Construção de complexo comercial com 3.200 m², estrutura em concreto armado, fachada em ACM e instalações completas.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Caucaia – CE</span>
+              <span><i class="fas fa-ruler-combined"></i> 3.200 m²</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="telecom">
+          <div class="pc-img" style="background-image:url('assets/images/hero_telecom.jpg')">
+            <span class="badge">Telecomunicações</span>
+          </div>
+          <div class="pc-body">
+            <h4>Rede de Fibra Óptica FTTH</h4>
+            <p>Implantação de 85 km de fibra óptica para provedor regional, abrangendo 12 municípios do interior do Ceará.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Interior – CE</span>
+              <span><i class="fas fa-road"></i> 85 km</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="eletrica">
+          <div class="pc-img" style="background-image:url('assets/images/electrical_infra.jpg')">
+            <span class="badge">Infraestrutura Elétrica</span>
+          </div>
+          <div class="pc-body">
+            <h4>Subestação Industrial 13,8kV</h4>
+            <p>Projeto e implantação de subestação elétrica industrial de 13,8 kV com painéis de média tensão e sistema de proteção.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Maracanaú – CE</span>
+              <span><i class="fas fa-bolt"></i> 13,8 kV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="urbano">
+          <div class="pc-img" style="background-image:url('assets/images/urban_lighting.jpg')">
+            <span class="badge">Projetos Urbanos</span>
+          </div>
+          <div class="pc-body">
+            <h4>Iluminação Pública LED – Pecém</h4>
+            <p>Substituição de 1.200 pontos de iluminação pública por luminárias LED de alta eficiência com econômia de energia de 65%.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Pecém – CE</span>
+              <span><i class="fas fa-lightbulb"></i> 1.200 pontos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="civil">
+          <div class="pc-img" style="background-image:url('assets/images/hero_construction.jpg')">
+            <span class="badge">Construção Civil</span>
+          </div>
+          <div class="pc-body">
+            <h4>Galpão Industrial – Zona do Porto</h4>
+            <p>Construção de galpão industrial de 5.000 m² em estrutura metálica com cobertura termoacústica para empresa logística.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Fortaleza – CE</span>
+              <span><i class="fas fa-ruler-combined"></i> 5.000 m²</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="telecom">
+          <div class="pc-img" style="background-image:url('assets/images/hero_telecom.jpg')">
+            <span class="badge">Telecomunicações</span>
+          </div>
+          <div class="pc-body">
+            <h4>Torre de Telecomunicações 60m</h4>
+            <p>Montagem e instalação de torre estaiada de 60 metros para roteador de microondas ponto a ponto em área rural.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Itapipoca – CE</span>
+              <span><i class="fas fa-ruler-vertical"></i> 60 metros</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="eletrica">
+          <div class="pc-img" style="background-image:url('assets/images/electrical_infra.jpg')">
+            <span class="badge">Infraestrutura Elétrica</span>
+          </div>
+          <div class="pc-body">
+            <h4>rede de MT/BT Municipal</h4>
+            <p>Extensão e modernização de rede de distribuição de energia elétrica em média e baixa tensão em área urbana.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Caucaia – CE</span>
+              <span><i class="fas fa-road"></i> 12 km</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="urbano">
+          <div class="pc-img" style="background-image:url('assets/images/urban_lighting.jpg')">
+            <span class="badge">Projetos Urbanos</span>
+          </div>
+          <div class="pc-body">
+            <h4>Sinalização de Rodovia CE-085</h4>
+            <p>Implantação de sinalização horizontal e vertical completa em 42 km de rodovia estadual conforme CONTRAN.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Ceará</span>
+              <span><i class="fas fa-road"></i> 42 km</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="civil">
+          <div class="pc-img" style="background-image:url('assets/images/engineering_team.jpg')">
+            <span class="badge">Construção Civil</span>
+          </div>
+          <div class="pc-body">
+            <h4>Centro Administrativo Municipal</h4>
+            <p>Construção de sede administrativa de prefeitura com 2.800 m², estrutura em concreto armado e acabamentos de alto padrão.</p>
+            <div class="pc-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Amontada – CE</span>
+              <span><i class="fas fa-ruler-combined"></i> 2.800 m²</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+
+      <!-- CTA -->
+      <div class="text-center reveal" style="margin-top:64px;">
+        <h3 style="margin-bottom:12px;">Quer fazer parte do nosso portfólio?</h3>
+        <p class="section-subtitle" style="margin:0 auto 28px;">Entre em contato e solicite uma proposta técnica sem compromisso.</p>
+        <a href="orcamento.html" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Solicitar Orçamento</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/images/logo.png" alt="Construtora Bezerra Mendes LTDA" /></div>
+          <p class="footer-desc">Empresa de engenharia, construção civil, telecomunicações e infraestrutura no Ceará.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Navegação</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html">Projetos</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li><li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Categorias</div>
+          <ul class="footer-links">
+            <li><a href="projetos.html">Construção Civil</a></li>
+            <li><a href="projetos.html">Telecomunicações</a></li>
+            <li><a href="projetos.html">Infraestrutura Elétrica</a></li>
+            <li><a href="projetos.html">Projetos Urbanos</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contato</div>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i><span>Pecém – Caucaia – CE, CEP 61680-990</span></li>
+            <li><i class="fab fa-whatsapp"></i><span><a href="#" class="whatsapp-link">(85) 9 9999-9999</a></span></li>
+            <li><i class="fas fa-envelope"></i><span>contato@bezerramendes.com.br</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Construtora Bezerra Mendes LTDA · CNPJ 41.389.739/0001-14 · Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-float" href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="wa-text">Atendimento imediato no WhatsApp</span></a>
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
