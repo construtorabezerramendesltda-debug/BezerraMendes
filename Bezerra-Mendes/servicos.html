@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Serviços da Construtora Bezerra Mendes: construção civil, telecomunicações, infraestrutura elétrica, iluminação pública e monitoramento eletrônico no Ceará." />
+  <meta name="keywords" content="construção civil Ceará, telecomunicações, infraestrutura elétrica, instalação elétrica, iluminação pública, empresa de engenharia" />
+  <title>Serviços – Construtora Bezerra Mendes LTDA</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .service-full-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      background: var(--white-pure);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      margin-bottom: 28px;
+    }
+    .service-full-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .sfc-img-col {
+      background-size: cover;
+      background-position: center;
+      min-height: 280px;
+      position: relative;
+    }
+    .sfc-img-col::after {
+      content:'';
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to right, rgba(10,22,40,0.3), transparent);
+    }
+    .sfc-img-col .sfc-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+    .sfc-body { padding: 40px; }
+    .sfc-icon { width: 56px; height: 56px; border-radius: var(--radius); background: linear-gradient(135deg, var(--navy), var(--blue)); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .sfc-icon i { color: var(--gold); font-size: 1.3rem; }
+    .sfc-body h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 12px; }
+    .sfc-body p { font-size: 0.93rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+    .sfc-features { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .sfc-feat { display: flex; align-items: center; gap: 7px; font-size: 0.82rem; color: var(--text-mid); font-weight: 500; }
+    .sfc-feat i { color: var(--gold); font-size: 0.75rem; }
+
+    @media(max-width:700px){
+      .service-full-card { grid-template-columns: 1fr; }
+      .sfc-img-col { min-height: 180px; }
+      .sfc-body { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader"><img src="assets/images/logo.png" alt="Bezerra Mendes" class="preloader-logo" /><div class="preloader-bar"><div class="preloader-bar-inner"></div></div></div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Construtora Bezerra Mendes LTDA" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html" class="active">Serviços</a></li><li><a href="projetos.html">Projetos</a></li>
+        <li><a href="orcamento.html">Orçamento</a></li><li><a href="contato.html">Contato</a></li>
+      </ul>
+      <a href="orcamento.html" class="btn btn-primary nav-cta"><i class="fas fa-clipboard-list"></i> Solicitar Orçamento</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a>
+    <a href="projetos.html">Projetos</a><a href="orcamento.html">Orçamento</a><a href="contato.html">Contato</a>
+    <a href="orcamento.html" class="btn btn-primary">Solicitar Orçamento</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Início</a><i class="fas fa-chevron-right"></i><span>Serviços</span></nav>
+      <h1 class="reveal">Serviços Especializados</h1>
+      <p style="color:rgba(248,250,252,0.7);max-width:580px;" class="reveal delay-1">Soluções completas em engenharia, construção civil, telecomunicações e infraestrutura elétrica para projetos de todos os portes.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 1 - Construção -->
+      <div class="service-full-card reveal">
+        <div class="sfc-img-col" style="background-image:url('assets/images/building_construction.jpg')">
+          <span class="badge sfc-badge">Construção Civil</span>
+        </div>
+        <div class="sfc-body">
+          <div class="sfc-icon"><i class="fas fa-building"></i></div>
+          <h3>Construção de Edifícios e Obras Civis</h3>
+          <p>Executamos obras de construção civil residencial, comercial e industrial com rigoroso controle de qualidade, gestão de projetos e cumprimento de prazos. Nossa equipe técnica garante obras seguras, duráveis e alinhadas às normas da ABNT.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Projetos estruturais</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Obras comerciais e industriais</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Construção em concreto armado</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Gerenciamento de obras</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Reforma e ampliação</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Obras públicas e privadas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 - Telecom -->
+      <div class="service-full-card reveal delay-1">
+        <div class="sfc-img-col" style="background-image:url('assets/images/hero_telecom.jpg')">
+          <span class="badge sfc-badge">Telecomunicações</span>
+        </div>
+        <div class="sfc-body">
+          <div class="sfc-icon"><i class="fas fa-broadcast-tower"></i></div>
+          <h3>Infraestrutura de Telecomunicações</h3>
+          <p>Projetamos e instalamos infraestrutura completa de telecomunicações, incluindo torres metálicas, antenas, sites de telefonia, cabos de fibra óptica e backbone de dados. Trabalhamos com as principais operadoras do Brasil.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Torres e mastros de telecom</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Fibra óptica FTTH/FTTB</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Sites de rádiobase (ERBs)</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Cabeamento estruturado</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Data centers</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Redes sem fio (Wi-Fi corporativo)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 - Elétrica -->
+      <div class="service-full-card reveal delay-2">
+        <div class="sfc-img-col" style="background-image:url('assets/images/electrical_infra.jpg')">
+          <span class="badge sfc-badge">Infraestrutura Elétrica</span>
+        </div>
+        <div class="sfc-body">
+          <div class="sfc-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Instalação e Manutenção Elétrica</h3>
+          <p>Realizamos projetos e execução de instalações elétricas em baixa e média tensão, subestações, sistemas de proteção e aterramento, atendendo residências, comércios, indústrias e infraestrutura pública.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Subestações de energia</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Instalações industriais de alta tensão</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Quadros elétricos e painéis</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> SPDA (Para-raios)</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Geradores e nobreaks</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Energia solar fotovoltaica</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 - Iluminação -->
+      <div class="service-full-card reveal">
+        <div class="sfc-img-col" style="background-image:url('assets/images/urban_lighting.jpg')">
+          <span class="badge sfc-badge">Projetos Urbanos</span>
+        </div>
+        <div class="sfc-body">
+          <div class="sfc-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Iluminação Pública e Sinalização</h3>
+          <p>Implantação de sistemas de iluminação pública com tecnologia LED de alta eficiência, sinalização viária, iluminação de vias, praças, parques e áreas industriais. Projetos personalizados para prefeituras e concessionárias.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Iluminação LED municipal</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Sinalização viária</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Iluminação de praças e parques</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Postes e luminárias</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Sistemas smart lighting</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 - Redes -->
+      <div class="service-full-card reveal delay-1">
+        <div class="sfc-img-col" style="background-image:url('assets/images/hero_construction.jpg')">
+          <span class="badge sfc-badge">Provedores</span>
+        </div>
+        <div class="sfc-body">
+          <div class="sfc-icon"><i class="fas fa-network-wired"></i></div>
+          <h3>Redes de Comunicação e Provedores</h3>
+          <p>Apoiamos provedores de internet na implantação de redes de fibra óptica, equipamentos de transmissão, OLTs, servidores e infraestrutura completa para operações de ISP em municípios de qualquer porte.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Implantação de ISPs</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Redes GPON/EPON</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Backhaul de rádio</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> NOC e monitoramento de redes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6/7/8 condensed row -->
+      <div class="grid grid-3" style="margin-top: 8px;">
+        <div class="card reveal" style="padding:32px;">
+          <div class="sfc-icon" style="margin-bottom:16px;"><i class="fas fa-laptop-code"></i></div>
+          <h3 style="font-size:1.1rem;margin-bottom:12px;">Suporte Técnico em TI</h3>
+          <p style="font-size:0.87rem;">Assistência especializada em hardware, software, redes e sistemas de TI para empresas e órgãos públicos.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Help desk</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Manutenção de servidores</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Implantação de ERP</div>
+          </div>
+        </div>
+        <div class="card reveal delay-1" style="padding:32px;">
+          <div class="sfc-icon" style="margin-bottom:16px;"><i class="fas fa-video"></i></div>
+          <h3 style="font-size:1.1rem;margin-bottom:12px;">Monitoramento Eletrônico</h3>
+          <p style="font-size:0.87rem;">Instalação e manutenção de sistemas de CFTV, controle de acesso, alarmes e monitoramento 24h.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> CFTV IP/analógico</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Controle de acesso biométrico</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Alarmes perimetrais</div>
+          </div>
+        </div>
+        <div class="card reveal delay-2" style="padding:32px;">
+          <div class="sfc-icon" style="margin-bottom:16px;"><i class="fas fa-tools"></i></div>
+          <h3 style="font-size:1.1rem;margin-bottom:12px;">Manutenção de Equipamentos</h3>
+          <p style="font-size:0.87rem;">Serviços preventivos e corretivos em equipamentos de telecomunicações, TI e infraestrutura elétrica.</p>
+          <div class="sfc-features">
+            <div class="sfc-feat"><i class="fas fa-check"></i> Manutenção preventiva</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Contratos de manutenção</div>
+            <div class="sfc-feat"><i class="fas fa-check"></i> Laudos técnicos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="margin-top:56px; padding: 52px; background:var(--navy); border-radius:var(--radius-xl);">
+        <h2 style="color:var(--white);margin-bottom:16px;">Precisa de um Serviço Personalizado?</h2>
+        <p style="color:rgba(248,250,252,0.7);margin-bottom:28px;">Nossa equipe de engenharia está pronta para avaliar seu projeto e oferecer a melhor solução.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="orcamento.html" class="btn btn-primary"><i class="fas fa-clipboard-list"></i> Solicitar Orçamento</a>
+          <a href="#" class="btn btn-outline whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="assets/images/logo.png" alt="Construtora Bezerra Mendes LTDA" /></div>
+          <p class="footer-desc">Empresa de engenharia, construção civil, telecomunicações e infraestrutura elétrica no Ceará.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Navegação</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li><li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li><li><a href="projetos.html">Projetos</a></li>
+            <li><a href="orcamento.html">Orçamento</a></li><li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Serviços</div>
+          <ul class="footer-links">
+            <li><a href="servicos.html">Construção Civil</a></li>
+            <li><a href="servicos.html">Telecomunicações</a></li>
+            <li><a href="servicos.html">Instalação Elétrica</a></li>
+            <li><a href="servicos.html">Iluminação Pública</a></li>
+            <li><a href="servicos.html">Monitoramento</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contato</div>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i><span>Av. Antônio Brasileiro, S/N – Pecém – Caucaia – CE</span></li>
+            <li><i class="fab fa-whatsapp"></i><span><a href="#" class="whatsapp-link">(85) 9 9999-9999</a></span></li>
+            <li><i class="fas fa-envelope"></i><span>contato@construtorabezerramendes.com</span></li>
+            <li><i class="fas fa-id-badge"></i><span>CNPJ: 41.389.739/0001-14</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Construtora Bezerra Mendes LTDA · Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <a id="whatsapp-float" href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i><span class="wa-text">Atendimento imediato no WhatsApp</span></a>
+  <button id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+  <script src="js/main.js"></script>
+</body>
+</html>
